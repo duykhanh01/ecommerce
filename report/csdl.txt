@@ -1,0 +1,44 @@
+//Vinh nhận làm front end chỉ lên mạng lấy cái nút về rồi xử lí lưu
+feedback: fb_rate, fb_content, (pr_id, u_id)
+
+users: u_id, u_fullname, u_email, u_pass, u_role,
+
+users-profile: u_id, u_add, u_birth, u_avatar, u_sex
+
+role: role_id, role_name
+
+categorys: cate_id, cate_name
+
+category: cate_id, pr_id
+
+tags: tag_id, tag_name
+
+tag: tag_id, pr_id
+
+color: color_id, color_name
+
+size: size_id, size_name
+
+productOptionColor: (pr_id , color_id)
+
+productOptionSize: (pr_id, size_id)
+
+productImg: img_id, pr_id, color_id, img_name
+
+product: pr_id, pr_name, u_id, pr_price, pr_discount, pr_des,
+pr_quaity, pr_rate, pr_status
+
+product => productOptionColor, productOptionSize => productImg
+
+
+cart: u_id, pr_id, pr_quantity, color_id, size_id
+
+orders: or_id, u_id, or_pay, or_fee, or_total, or_time, or_status
+
+orderDetail: (or_id, pr_id), od_quantity, od_price, color_id, size_id
+
+
+
+
+
+
