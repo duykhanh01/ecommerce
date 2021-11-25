@@ -15,7 +15,7 @@ class CreateProductOptionColorsTable extends Migration
     {
         Schema::create('product_option_colors', function (Blueprint $table) {
             $table->unsignedBigInteger('products_id');
-            $table->foreign('producs_id')->references('id')->on('products');
+            $table->foreign('products_id')->references('id')->on('products');
             $table->unsignedBigInteger('colors_id');
             $table->foreign('colors_id')->references('id')->on('colors');
             $table->primary(['colors_id', 'products_id']);

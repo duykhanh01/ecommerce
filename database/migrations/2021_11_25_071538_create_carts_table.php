@@ -17,13 +17,13 @@ class CreateCartsTable extends Migration
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('products_id');
-            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('products_id')->references('id')->on('products');
             $table->unsignedInteger('cart_quantity');
-            $table->unsignedInteger('colors_id');
-            $table->foreign('colors_id')->references('id')->on('colors')->onDelete('cascade');
-            $table->unsignedInteger('sizes_id');
-            $table->foreign('sizes_id')->references('id')->on('sizes')->onDelete('cascade');
-            $table->primary(['users_id','products_id','colors_id','sizes_id']);
+            $table->unsignedBigInteger('sizes_id');
+            $table->foreign('sizes_id')->references('id')->on('sizes');
+            $table->unsignedBigInteger('colors_id');
+            $table->foreign('colors_id')->references('id')->on('colors');
+            $table->primary(['users_id', 'products_id', 'colors_id', 'sizes_id']);
             $table->timestamps();
         });
     }
