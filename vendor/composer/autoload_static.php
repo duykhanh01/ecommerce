@@ -566,6 +566,7 @@ class ComposerStaticInit53f7b16a4363ef1586ac53569ed136a5
         'App\\Models\\TagPr' => __DIR__ . '/../..' . '/app/Models/TagPr.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\UserProfile' => __DIR__ . '/../..' . '/app/Models/UserProfile.php',
+        'App\\Models\\feedback' => __DIR__ . '/../..' . '/app/Models/feedback.php',
         'App\\Models\\tags' => __DIR__ . '/../..' . '/app/Models/tags.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

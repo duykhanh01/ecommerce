@@ -41,6 +41,7 @@ return array(
     'App\\Models\\TagPr' => $baseDir . '/app/Models/TagPr.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\UserProfile' => $baseDir . '/app/Models/UserProfile.php',
+    'App\\Models\\feedback' => $baseDir . '/app/Models/feedback.php',
     'App\\Models\\tags' => $baseDir . '/app/Models/tags.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
