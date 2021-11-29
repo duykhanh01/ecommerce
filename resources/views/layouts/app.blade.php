@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/icon.png">
     <link rel="apple-touch-icon" href="img/icon.png">
@@ -30,6 +30,8 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="css/main.css">
+    
+    
 </head>
 
 <body>

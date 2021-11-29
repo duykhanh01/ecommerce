@@ -14,6 +14,6 @@ class Orders extends Model
     }
     public function OrderDetail()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot('active', 'created_by');
     }
 }
