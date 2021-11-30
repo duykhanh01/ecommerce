@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Color;
-use App\Models\Size;
 use App\Models\Tags;
 
-class ColorController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +16,6 @@ class ColorController extends Controller
     public function index()
     {
         //
-        $color = Color::all();
-        $size = Size::all();
-        $tag = Tags::all();
-
-        return view('admin.option', ['color' => $color, 'size' => $size, 'tag'=>$tag] );
-        
     }
 
     /**
@@ -45,8 +37,8 @@ class ColorController extends Controller
     public function store(Request $request)
     {
         //
-        $color = new Color();
-        $color->color_name = $request->color;
+        $color = new Tags();
+        $color->tag_name = $request->tag;
         $color->save();
         return redirect('/admin/option');
     }

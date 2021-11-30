@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Size;
 
 class SizeController extends Controller
 {
@@ -36,6 +37,10 @@ class SizeController extends Controller
     public function store(Request $request)
     {
         //
+        $color = new Size();
+        $color->size_name = $request->size;
+        $color->save();
+        return redirect('/admin/option');
     }
 
     /**
