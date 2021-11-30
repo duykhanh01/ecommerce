@@ -16,9 +16,9 @@
    
 
     <!-- Styles -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/icon.png">
-    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+    <link rel="apple-touch-icon" href="/img/icon.png">
 
     <!-- ************************* CSS Files ************************* -->
 
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="{{ asset('css/filepond-plugin-image-preview.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
-    <!-- <link rel="manifest" href="img/content/favicons/manifest.json" />-->
+    <!-- <link rel="manifest" href="/img/content/favicons/manifest.json" />-->
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
@@ -469,16 +469,16 @@
                                 </button>
                                 <div class="lang-menu dropdown-menu">
                                     <button class="lang-menu__button dropdown-menu__item" tabindex="0">
-                                        <img class="lang-menu__icon" src="img/content/flags/us.svg" alt="#" /><span class="lang-menu__text">En</span>
+                                        <img class="lang-menu__icon" src="/img/content/flags/us.svg" alt="#" /><span class="lang-menu__text">En</span>
                                     </button>
                                     <button class="lang-menu__button dropdown-menu__item" tabindex="0">
-                                        <img class="lang-menu__icon" src="img/content/flags/gb.svg" alt="#" /><span class="lang-menu__text">Gb</span>
+                                        <img class="lang-menu__icon" src="/img/content/flags/gb.svg" alt="#" /><span class="lang-menu__text">Gb</span>
                                     </button>
                                     <button class="lang-menu__button dropdown-menu__item" tabindex="0">
-                                        <img class="lang-menu__icon" src="img/content/flags/ru.svg" alt="#" /><span class="lang-menu__text">Ru</span>
+                                        <img class="lang-menu__icon" src="/img/content/flags/ru.svg" alt="#" /><span class="lang-menu__text">Ru</span>
                                     </button>
                                     <button class="lang-menu__button dropdown-menu__item" tabindex="0">
-                                        <img class="lang-menu__icon" src="img/content/flags/cn.svg" alt="#" /><span class="lang-menu__text">Cn</span>
+                                        <img class="lang-menu__icon" src="/img/content/flags/cn.svg" alt="#" /><span class="lang-menu__text">Cn</span>
                                     </button>
                                     <div class="lang-menu__separate"></div><a class="lang-menu__button lang-menu__button--all dropdown-menu__item" href="#" tabindex="0">Learn</a>
                                 </div>
@@ -616,7 +616,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-teal">
                                                             <div class="dropdown-menu__item-icon-text">MA</div>
-                                                            <img src="img/content/humans/item-4.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-4.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal badge-signal--green"></div>
                                                     </div>
@@ -638,7 +638,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-orange-dark">
                                                             <div class="dropdown-menu__item-icon-text">JT</div>
-                                                            <img src="img/content/humans/item-1.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-1.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal badge-signal--green"></div>
                                                     </div>
@@ -660,7 +660,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-orange">
                                                             <div class="dropdown-menu__item-icon-text">SA</div>
-                                                            <img src="img/content/humans/item-5.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-5.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal"></div>
                                                     </div>
@@ -682,7 +682,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-red">
                                                             <div class="dropdown-menu__item-icon-text">WS</div>
-                                                            <img src="img/content/humans/item-6.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-6.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal badge-signal--red"></div>
                                                     </div>
@@ -704,7 +704,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-blue">
                                                             <div class="dropdown-menu__item-icon-text">SA</div>
-                                                            <img src="img/content/humans/item-5.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-5.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal badge-signal--green"></div>
                                                     </div>
@@ -726,7 +726,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-green">
                                                             <div class="dropdown-menu__item-icon-text">JH</div>
-                                                            <img src="img/content/humans/item-7.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-7.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal"></div>
                                                     </div>
@@ -748,7 +748,7 @@
                                                     <div class="dropdown-menu__item-left">
                                                         <div class="dropdown-menu__item-icon color-orange">
                                                             <div class="dropdown-menu__item-icon-text">RH</div>
-                                                            <img src="img/content/humans/item-8.jpg" alt="#" />
+                                                            <img src="/img/content/humans/item-8.jpg" alt="#" />
                                                         </div>
                                                         <div class="badge-signal badge-signal--red"></div>
                                                     </div>
@@ -771,7 +771,7 @@
                             <div class="header__profile dropdown">
                                 <a class="header__profile-toggle dropdown__toggle" href="#" data-toggle="dropdown">
                                     <div class="header__profile-image"><span class="header__profile-image-text">MA</span>
-                                        <img src="img/content/humans/item-4.jpg" alt="#" />
+                                        <img src="/img/content/humans/item-4.jpg" alt="#" />
                                     </div>
                                     <div class="header__profile-text"><span>Mark Anderson</span>
                                     </div><span class="icon-arrow-down">
@@ -809,7 +809,7 @@
                 <div class="sidebar__top">
                     <div class="container container--sm">
                         <a class="sidebar__logo" href="index.html">
-                            <img class="sidebar__logo-icon" src="img/content/logotype.svg" alt="#" width="44" />
+                            <img class="sidebar__logo-icon" src="/img/content/logotype.svg" alt="#" width="44" />
                             <div class="sidebar__logo-text">arion</div>
                         </a>
                     </div>
@@ -951,37 +951,37 @@
         </aside>
         @yield('content_admin')
     </div>
-    <script src="js/gsap/gsap.min.js"></script>
-    <script src="js/gsap/ScrollToPlugin.min.js"></script>
-    <script src="js/gsap/ScrollTrigger.min.js"></script>
-    <script src="js/vendor/popper.min.js"></script>
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
-    <script src="js/vendor/simplebar.min.js"></script>
-    <script src="js/vendor/tippy-bundle.umd.min.js"></script>
-    <script src="js/vendor/grid/masonry.pkgd.min.js"></script>
-    <script src="js/vendor/grid/isotope.pkgd.min.js"></script>
-    <script src="js/vendor/charts/circle-progress.min.js"></script>
-    <script src="js/vendor/charts/echarts.common.min.js"></script>
-    <script src="js/vendor/charts/apexcharts/apexcharts.min.js"></script>
-    <script src="js/vendor/cleave/cleave.min.js"></script>
-    <script src="js/vendor/cleave/addons/cleave-phone.us.js"></script>
-    <script src="js/vendor/jqvmap/jquery.vmap.min.js"></script>
-    <script src="js/vendor/jqvmap/jquery.vmap.world.js"></script>
-    <script src="js/vendor/jqvmap/jquery.vmap.sampledata.js"></script>
-    <script src="js/vendor/jquery.star-rating-svg.min.js"></script>
-    <script src="js/vendor/calendar/flatpickr/flatpickr.min.js"></script>
-    <script src="js/vendor/calendar/flatpickr/en.js"></script>
-    <script src="js/vendor/select2.min.js"></script>
-    <script src="js/vendor/editors/quill.min.js"></script>
-    <script src="js/vendor/filepond/filepond-plugin-image-preview.min.js"></script>
-    <script src="js/vendor/filepond/filepond.min.js"></script>
-    <script src="js/vendor/swiper-bundle.min.js"></script>
-    <script src="js/vendor/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="js/vendor/scrollmagic/debug.addIndicators.min.js"></script>
-    <script src="js/components.js"></script>
-    <script src="js/common.js"></script>
+    <script src="/js/gsap/gsap.min.js"></script>
+    <script src="/js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="/js/gsap/ScrollTrigger.min.js"></script>
+    <script src="/js/vendor/popper.min.js"></script>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/vendor/simplebar.min.js"></script>
+    <script src="/js/vendor/tippy-bundle.umd.min.js"></script>
+    <script src="/js/vendor/grid/masonry.pkgd.min.js"></script>
+    <script src="/js/vendor/grid/isotope.pkgd.min.js"></script>
+    <script src="/js/vendor/charts/circle-progress.min.js"></script>
+    <script src="/js/vendor/charts/echarts.common.min.js"></script>
+    <script src="/js/vendor/charts/apexcharts/apexcharts.min.js"></script>
+    <script src="/js/vendor/cleave/cleave.min.js"></script>
+    <script src="/js/vendor/cleave/addons/cleave-phone.us.js"></script>
+    <script src="/js/vendor/jqvmap/jquery.vmap.min.js"></script>
+    <script src="/js/vendor/jqvmap/jquery.vmap.world.js"></script>
+    <script src="/js/vendor/jqvmap/jquery.vmap.sampledata.js"></script>
+    <script src="/js/vendor/jquery.star-rating-svg.min.js"></script>
+    <script src="/js/vendor/calendar/flatpickr/flatpickr.min.js"></script>
+    <script src="/js/vendor/calendar/flatpickr/en.js"></script>
+    <script src="/js/vendor/select2.min.js"></script>
+    <script src="/js/vendor/editors/quill.min.js"></script>
+    <script src="/js/vendor/filepond/filepond-plugin-image-preview.min.js"></script>
+    <script src="/js/vendor/filepond/filepond.min.js"></script>
+    <script src="/js/vendor/swiper-bundle.min.js"></script>
+    <script src="/js/vendor/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="/js/vendor/scrollmagic/debug.addIndicators.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/common.js"></script>
 </body>
 
 </html>
