@@ -1,7 +1,6 @@
 
 @extends('layouts.admin')
 @section('content_admin')
-
 <main class="page-content">
     <div class="container">
         <div class="page-header">
@@ -887,43 +886,35 @@
                 </div>
                 <div class="modal__body">
                     <div class="modal__container">
-                        <form method="POST">
-                            <div class="row row--md">
+                        <form enctype="multipart/form-data" id="form-add-product" action="{{route('addProduct')}}" method="POST" >
+                        @csrf    
+                        <div class="row row--md">
                                 <div class="col-12 form-group form-group--lg">
                                     <label class="form-label">Product Name</label>
                                     <div class="input-group">
-                                        <input class="input" type="text" placeholder="" value="Apple Watch Series 4"
+                                        <input class="input" type="text" placeholder="" name="pr_name" value="Apple Watch Series 4"
                                             required>
                                     </div>
                                 </div>
                                 <div class="col-12 form-group form-group--lg">
                                     <label class="form-label">Description</label>
-                                    <div class="input-editor">
-                                        <div class="js-description-editor">Fundamentally redesigned and reengineered.
-                                            The largest Apple Watch display yet. Built-in electrical heart sensor. New
-                                            Digital Crown with haptic feedback. Low and high heart rate notifications.
-                                            Fall detection
-                                            and Emergency SOS.</div>
+                                    <div class="input-group">
+                                        <textarea name="desc" class="input"> </textarea>
                                     </div>
                                 </div>
-                                <div class="col-12 form-group form-group--lg">
+                                <div class="col-12 form-group form-group--lg mb-2">
                                     <label class="form-label">Category</label>
-                                    <div class="input-group input-group--append">
-                                        <select class="input js-input-select input--fluid" data-placeholder="">
-                                            <option value="1" selected="selected">MacBook
-                                            </option>
-                                            <option value="2">Apple Watch
-                                            </option>
-                                            <option value="3">AirPods
-                                            </option>
-                                            <option value="4">iPhone
-                                            </option>
-                                            <option value="5">IPad
-                                            </option>
-                                        </select><span class="input-group__arrow">
-                                            <svg class="icon-icon-keyboard-down">
-                                                <use xlink:href="#icon-keyboard-down"></use>
-                                            </svg></span>
+                                    <select class="input js-input-tags" name="category[]" multiple="multiple" data-placeholder="">
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->cate_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-12 form-group form-group--lg mb-2">
+                                    <label class="form-label">Quantity</label>
+                                    <div class="input-group">
+                                        <input class="input" type="number" placeholder="" name="pr_quantity" value="Apple Watch Series 4"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group form-group--lg">
@@ -931,7 +922,7 @@
                                     <div class="input-group input-group--prepend">
                                         <div class="input-group__prepend"><span class="input-group__symbol">$</span>
                                         </div>
-                                        <input class="input" type="number" min="0" max="999999999" placeholder=""
+                                        <input class="input" type="number" name="pr_price" min="0" max="999999999" placeholder=""
                                             value="399" required>
                                     </div>
                                 </div>
@@ -940,7 +931,7 @@
                                     <div class="input-group input-group--prepend">
                                         <div class="input-group__prepend"><span class="input-group__symbol">%</span>
                                         </div>
-                                        <input class="input" type="number" min="0" max="100" placeholder="" value="10"
+                                        <input class="input" name="pr_discount" type="number" min="0" max="100" placeholder="" value="10"
                                             required>
                                     </div>
                                 </div>
@@ -948,7 +939,7 @@
                                     <label class="form-label">Product Images</label>
                                     <div class="image-upload">
                                         <div class="image-upload__drop">
-                                            <input class="image-upload__input" type="file" name="file_upload"
+                                            <input class="image-upload__input" type="file" name="file_upload[]"
                                                 multiple="multiple" accept="image/png, image/jpeg" />
                                             <div class="image-upload__drop-text">
                                                 <svg class="icon-icon-upload">
@@ -1015,13 +1006,25 @@
                                 <div class="col-12 form-group form-group--lg mb-0">
                                     <label class="form-label">Tags</label>
                                     <select class="input js-input-tags" multiple="multiple" data-placeholder="">
-                                        <option value="1" selected="selected">Smartwatch</option>
-                                        <option value="2" selected="selected">Apple</option>
-                                        <option value="3">MacBook</option>
-                                        <option value="4" selected="selected">Apple Watch</option>
-                                        <option value="5">AirPods</option>
-                                        <option value="6">iPhone</option>
-                                        <option value="7">IPad</option>
+                                        @foreach($tags as $tag)
+                                            <option value="{{$tag->id}}">{{$tag->tag_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-12 form-group form-group--lg mb-0">
+                                    <label class="form-label">Color</label>
+                                    <select class="input js-input-tags" name="color[]" multiple="multiple" data-placeholder="">
+                                        @foreach($colors as $color)
+                                            <option value="{{$color->id}}">{{$color->color_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-12 form-group form-group--lg mb-0">
+                                    <label class="form-label">Sizes</label>
+                                    <select class="input js-input-tags" name="size[]" multiple="multiple" data-placeholder="">
+                                        @foreach($sizes as $size)
+                                            <option value="{{$size->id}}">{{$size->size_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -1033,7 +1036,7 @@
                         <div class="modal__footer-buttons">
                             <div class="modal__footer-button">
                                 <button class="button button--primary button--block" data-dismiss="modal"
-                                    data-modal="#addProductSuccess"><span class="button__text">Create</span>
+                                    data-modal="#addProductSuccess" id = "create-product"><span class="button__text">Create</span>
                                 </button>
                             </div>
                             <div class="modal__footer-button">

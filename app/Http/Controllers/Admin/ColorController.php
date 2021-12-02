@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Color;
 use App\Models\Size;
 use App\Models\Tags;
+use App\Models\Category;
 
 class ColorController extends Controller
 {
@@ -18,11 +19,12 @@ class ColorController extends Controller
     public function index()
     {
         //
+       
         $color = Color::all();
         $size = Size::all();
         $tag = Tags::all();
-
-        return view('admin.option', ['color' => $color, 'size' => $size, 'tag'=>$tag] );
+        $categories = Category::all();
+        return view('admin.option', ['color' => $color, 'size' => $size, 'tag'=>$tag, 'categories' => $categories] );
         
     }
 
@@ -83,6 +85,12 @@ class ColorController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $color = Color::find($id);
+        if(!$color)
+        {
+            $color->color_name = $request->color;
+        }
+        return redirect()->route('option');
     }
 
     /**
@@ -94,5 +102,15 @@ class ColorController extends Controller
     public function destroy($id)
     {
         //
+        $color = Color::find($id);
+        if($color)
+        {
+            $color->delete();
+            return redirect()->route('option');
+        }
+        else
+            return view('404');
+        
+
     }
 }

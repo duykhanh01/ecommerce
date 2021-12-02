@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content_admin')
-@endsection
 <main class="page-content">
     <div class="container">
         <div class="page-header">
@@ -51,26 +50,26 @@
                                         <div class="swiper-wrapper">
                                             <div class="add-product__thumb swiper-slide">
                                                 <img class="add-product__thumb-image swiper-lazy"
-                                                    src="img/content/product/thumb-1.jpg"
-                                                    srcset="img/content/product/thumb-1.jpg 2x" alt="#">
+                                                    src="/img/content/product/thumb-1.jpg"
+                                                    srcset="/img/content/product/thumb-1.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__thumb swiper-slide">
                                                 <img class="add-product__thumb-image swiper-lazy"
-                                                    src="img/content/product/thumb-2.jpg"
-                                                    srcset="img/content/product/thumb-2.jpg 2x" alt="#">
+                                                    src="/img/content/product/thumb-2.jpg"
+                                                    srcset="/img/content/product/thumb-2.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__thumb swiper-slide">
                                                 <img class="add-product__thumb-image swiper-lazy"
-                                                    src="img/content/product/thumb-3.jpg"
-                                                    srcset="img/content/product/thumb-3.jpg 2x" alt="#">
+                                                    src="/img/content/product/thumb-3.jpg"
+                                                    srcset="/img/content/product/thumb-3.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__thumb swiper-slide">
                                                 <img class="add-product__thumb-image swiper-lazy"
-                                                    src="img/content/product/thumb-4.jpg"
-                                                    srcset="img/content/product/thumb-4.jpg 2x" alt="#">
+                                                    src="/img/content/product/thumb-4.jpg"
+                                                    srcset="/img/content/product/thumb-4.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__thumb swiper-slide">
@@ -101,26 +100,26 @@
                                         <div class="swiper-wrapper">
                                             <div class="add-product__gallery-slide swiper-slide">
                                                 <img class="add-product__gallery-image swiper-lazy"
-                                                    src="img/content/product/item-1.jpg"
-                                                    srcset="img/content/product/item-1.jpg 2x" alt="#">
+                                                    src="/img/content/product/item-1.jpg"
+                                                    srcset="/img/content/product/item-1.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__gallery-slide swiper-slide">
                                                 <img class="add-product__gallery-image swiper-lazy"
-                                                    src="img/content/product/item-2.jpg"
-                                                    srcset="img/content/product/item-2.jpg 2x" alt="#">
+                                                    src="/img/content/product/item-2.jpg"
+                                                    srcset="/img/content/product/item-2.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__gallery-slide swiper-slide">
                                                 <img class="add-product__gallery-image swiper-lazy"
-                                                    src="img/content/product/item-3.jpg"
-                                                    srcset="img/content/product/item-3.jpg 2x" alt="#">
+                                                    src="/img/content/product/item-3.jpg"
+                                                    srcset="/img/content/product/item-3.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__gallery-slide swiper-slide">
                                                 <img class="add-product__gallery-image swiper-lazy"
-                                                    src="img/content/product/item-4.jpg"
-                                                    srcset="img/content/product/item-4.jpg 2x" alt="#">
+                                                    src="/img/content/product/item-4.jpg"
+                                                    srcset="/img/content/product/item-4.jpg 2x" alt="#">
                                                 <div class="add-product__lazy-preloader swiper-lazy-preloader"></div>
                                             </div>
                                             <div class="add-product__gallery-slide swiper-slide">
@@ -229,7 +228,7 @@
             <div class="modal__content">
                 <div class="modal__body">
                     <div class="modal__container">
-                        <img class="modal-success__icon" src="img/content/checked-success.svg" alt="#">
+                        <img class="modal-success__icon" src="/img/content/checked-success.svg" alt="#">
                         <h4 class="modal-success__title">Product was added</h4>
                     </div>
                 </div>

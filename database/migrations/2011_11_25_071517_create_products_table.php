@@ -19,11 +19,11 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('pr_price');
-            $table->unsignedBigInteger('pr_discount');
+            $table->unsignedBigInteger('pr_discount')->default(0);
             $table->text('pr_des');
-            $table->unsignedInteger('pr_quantity');
-            $table->float('pr_rate');
-            $table->integer('pr_status');
+            $table->unsignedInteger('pr_quantity')->default(0);
+            $table->float('pr_rate')->default(0);
+            $table->integer('pr_status')->default(1);
             $table->timestamps();
         });
     }

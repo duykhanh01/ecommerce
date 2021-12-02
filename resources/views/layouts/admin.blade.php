@@ -984,6 +984,7 @@
     <script src="/js/vendor/scrollmagic/debug.addIndicators.min.js"></script>
     <script src="/js/components.js"></script>
     <script src="/js/common.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
 
 </html>
