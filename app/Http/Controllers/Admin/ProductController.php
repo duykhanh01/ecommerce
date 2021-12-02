@@ -9,6 +9,10 @@ use App\Models\Size;
 use App\Models\Tags;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductOptionColor;
+use App\Models\ProductOptionSize;
+use App\Models\Cates;
+use App\Models\TagPr;
 
 
 class ProductController extends Controller
@@ -56,8 +60,9 @@ class ProductController extends Controller
         $pr_quantity = $request->pr_quantity;
         $pr_price = $request->pr_price;
         $pr_discount = $request->pr_discount;
-        $pr_color = $request->color;
+        $pr_colors = $request->color;
         $pr_size = $request->size;
+        $pr_tags = $request->pr_tags;
         $product = new Product();
         $product->users_id = $userId;
         $product->pr_name = $pr_name;
@@ -66,7 +71,36 @@ class ProductController extends Controller
         $product->pr_price = $pr_price;
         $product->pr_discount = $pr_discount;
         $product->save();
-        
+        $pr_id = $product->id;
+        foreach($pr_colors as $cl)
+        {
+            $pr_color = new ProductOptionColor;
+            $pr_color->products_id = $pr_id;
+            $pr_color->colors_id =  $cl;
+            $pr_color->save();
+        }
+        foreach($pr_category as $cate)
+        {
+            $category = new Cates;
+            $category->products_id = $pr_id;
+            $category->categories_id =  $cate;
+            $category->save();
+        }
+        foreach($pr_size as $size)
+        {
+            $PrSize = new ProductOptionSize;
+            $PrSize->products_id = $pr_id;
+            $PrSize->sizes_id =  $size;
+            $PrSize->save();
+        }
+        foreach($pr_tags as $tag)
+        {
+            $Tag = new TagPr();
+            $Tag->products_id = $pr_id;
+            $Tag->tags_id = $tag;
+            $Tag->save();
+        }
+        return redirect()->route('product');
     }
 
     /**

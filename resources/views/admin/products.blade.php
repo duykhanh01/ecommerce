@@ -899,7 +899,7 @@
                                 <div class="col-12 form-group form-group--lg">
                                     <label class="form-label">Description</label>
                                     <div class="input-group">
-                                        <textarea name="desc" class="input"> </textarea>
+                                        <textarea name="pr_desc" class="input"> </textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 form-group form-group--lg mb-2">
@@ -1005,7 +1005,7 @@
                                 </div>
                                 <div class="col-12 form-group form-group--lg mb-0">
                                     <label class="form-label">Tags</label>
-                                    <select class="input js-input-tags" multiple="multiple" data-placeholder="">
+                                    <select class="input js-input-tags" name="pr_tags[]" multiple="multiple" data-placeholder="">
                                         @foreach($tags as $tag)
                                             <option value="{{$tag->id}}">{{$tag->tag_name}}</option>
                                         @endforeach

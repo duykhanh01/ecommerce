@@ -19,6 +19,7 @@ class CreateProductOptionColorsTable extends Migration
             $table->unsignedBigInteger('colors_id');
             $table->foreign('colors_id')->references('id')->on('colors');
             $table->primary(['colors_id', 'products_id']);
+            $table->timestamps();
         });
     }
 

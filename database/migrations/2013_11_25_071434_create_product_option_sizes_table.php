@@ -14,11 +14,11 @@ class CreateProductOptionSizesTable extends Migration
     public function up()
     {
         Schema::create('product_option_sizes', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('products_id');
             $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
-            $table->unsignedBigInteger('colors_id');
-            $table->foreign('colors_id')->references('id')->on('colors')->onDelete('cascade');
+            $table->unsignedBigInteger('sizes_id');
+            $table->foreign('sizes_id')->references('id')->on('sizes')->onDelete('cascade');
+            $table->primary(['sizes_id', 'products_id']);
             $table->timestamps();
         });
     }

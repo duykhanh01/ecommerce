@@ -24,6 +24,7 @@ class CreateOrderDetailsTable extends Migration
             $table->primary(['orders_id', 'products_id']);
             $table->foreign('orders_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
