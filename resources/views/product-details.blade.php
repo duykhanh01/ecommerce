@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<section class="page-title-area bg-image ptb--80" data-bg-image="img/bg/page_title_bg.jpg">
+<p class="d-none" id ="user-id" user_id ={{$user_id}}></p>
+<section class="page-title-area bg-image ptb--80" data-bg-image="/img/bg/page_title_bg.jpg">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -32,38 +33,16 @@
                                                 "arrows": false, 
                                                 "asNavFor": ".nav-slider"
                                             }'>
-                                        <figure class="product-gallery__image zoom">
-                                            <img src="img/products/prod-08-700x778.png" alt="Product">
-                                            <span class="product-badge sale">Sale</span>
-                                            <div class="product-gallery__actions">
-                                                <button class="action-btn btn-zoom-popup"><i class="la la-eye"></i></button>
-                                                <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="la la-play"></i></a>
-                                            </div>
-                                        </figure>
-                                        <figure class="product-gallery__image zoom">
-                                            <img src="img/products/prod-09-700x778.png" alt="Product">
-                                            <span class="product-badge sale">Sale</span>
-                                            <div class="product-gallery__actions">
-                                                <button class="action-btn btn-zoom-popup"><i class="la la-eye"></i></button>
-                                                <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="la la-play"></i></a>
-                                            </div>
-                                        </figure>
-                                        <figure class="product-gallery__image zoom">
-                                            <img src="img/products/prod-10-700x778.png" alt="Product">
-                                            <span class="product-badge sale">Sale</span>
-                                            <div class="product-gallery__actions">
-                                                <button class="action-btn btn-zoom-popup"><i class="la la-eye"></i></button>
-                                                <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="la la-play"></i></a>
-                                            </div>
-                                        </figure>
-                                        <figure class="product-gallery__image zoom">
-                                            <img src="img/products/prod-04-700x778.png" alt="Product">
-                                            <span class="product-badge sale">Sale</span>
-                                            <div class="product-gallery__actions">
-                                                <button class="action-btn btn-zoom-popup"><i class="la la-eye"></i></button>
-                                                <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="la la-play"></i></a>
-                                            </div>
-                                        </figure>
+                                        @foreach ($imgs as $img)
+                                            <figure class="product-gallery__image zoom">
+                                                <img src="/files/{{$img->img_name}}" alt="Product">
+                                                <span class="product-badge sale">Sale</span>
+                                                <div class="product-gallery__actions">
+                                                    <button class="action-btn btn-zoom-popup"><i class="la la-eye"></i></button>
+                                                    <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="la la-play"></i></a>
+                                                </div>
+                                            </figure>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -116,65 +95,56 @@
                                                 } 
                                             }
                                         ]'>
-                                    <figure class="product-gallery__nav-image--single">
-                                        <img src="img/products/prod-08-170x195.png" alt="Products">
-                                    </figure>
-                                    <figure class="product-gallery__nav-image--single">
-                                        <img src="img/products/prod-09-170x195.png" alt="Products">
-                                    </figure>
-                                    <figure class="product-gallery__nav-image--single">
-                                        <img src="img/products/prod-10-170x195.png" alt="Products">
-                                    </figure>
-                                    <figure class="product-gallery__nav-image--single">
-                                        <img src="img/products/prod-04-170x195.jpg" alt="Products">
-                                    </figure>
+                                    @foreach ($imgs as $img)
+                                        <figure class="product-gallery__nav-image--single">
+                                            <img src="/files/{{$img->img_name}}" alt="Products">
+                                        </figure>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-xl-4 offset-xl-1 col-lg-5 product-main-details mt-md--50">
                     <div class="product-summary pl-lg--30 pl-md--0">
-                        <div class="product-navigation text-right mb--20">
-                            <a href="#" class="prev"><i class="la la-angle-double-left"></i></a>
-                            <a href="#" class="next"><i class="la la-angle-double-right"></i></a>
-                        </div>
+                        <h3 class="product-title mb--20" id="id-product" id-pr='{{$product->id}}'>{{$product->pr_name}}</h3>
                         <div class="product-rating d-flex mb--20">
                             <div class="star-rating star-four">
                                 <span>Rated <strong class="rating">5.00</strong> out of 5</span>
                             </div>
                         </div>
-                        <h3 class="product-title mb--20">Golden Easy Spot Chair.</h3>
-                        <p class="product-short-description mb--20">Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus scelerisque. Vestibulum ut sem laoreet, feugiat tellus at, hendrerit arcu.</p>
+                        
                         <div class="product-price-wrapper mb--25">
-                            <span class="money">$200.00</span>
-                            <span class="price-separator">-</span>
-                            <span class="money">$400.00</span>
+                            <span class="money" style='text-decoration: line-through;'>${{$product->pr_price}}</span>
+                            <span class="price-separator">  </span>
+                            <span class="money">${{$product->pr_price-$product->pr_price*$product->pr_discount/100}}</span>
+                            <span class="price-separator mb-2 p-1" style="margin-left: 15px; background-color: red; color:white;border-radius:10px; font-size:15px;">Giảm {{$product->pr_discount}}%</span>
                         </div>
                         <form action="#" class="variation-form mb--20">
+                            @csrf
+                            <div class="product-size-variations d-flex align-items-center mb--15">
+                                <p class="variation-label">Color:</p>
+                                <div class="product-size-variation variation-wrapper">
+                                    @foreach($colors as $color)
+                                    <div class="variation">
+                                        <a class="product-size-variation-btn product-select-color" id-color ='{{$color->id}}' data-toggle="tooltip" data-placement="top">
+                                            <span class="product-size-variation-label">{{$color->color_name}}</span>
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
                             <div class="product-size-variations d-flex align-items-center mb--15">
                                 <p class="variation-label">Size:</p>
                                 <div class="product-size-variation variation-wrapper">
+                                    @foreach($sizes as $size)
                                     <div class="variation">
-                                        <a class="product-size-variation-btn selected" data-toggle="tooltip" data-placement="top" title="S">
-                                            <span class="product-size-variation-label">S</span>
+                                        <a class="product-size-variation-btn product-select-size" id-size = '{{$size->id}}' data-toggle="tooltip" data-placement="top">
+                                            <span class="product-size-variation-label">{{$size->size_name}}</span>
                                         </a>
                                     </div>
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn" data-toggle="tooltip" data-placement="top" title="M">
-                                            <span class="product-size-variation-label">M</span>
-                                        </a>
-                                    </div>
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn" data-toggle="tooltip" data-placement="top" title="L">
-                                            <span class="product-size-variation-label">L</span>
-                                        </a>
-                                    </div>
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn" data-toggle="tooltip" data-placement="top" title="XL">
-                                            <span class="product-size-variation-label">XL</span>
-                                        </a>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <a href="" class="reset_variations">Clear</a>
@@ -186,20 +156,29 @@
                                     <input type="number" class="quantity-input" name="qty" id="qty" value="1" min="1">
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-shape-square btn-size-sm" onclick="window.location.href='cart.html'">
+                            <button type="button" id="add-to-cart" class="btn btn-shape-square btn-size-sm">
                                 Add To Cart
                             </button>
                         </div>
                         <div class="product-footer-meta">
                             <p><span>Category:</span>
-                                <a href="shop.html">Full Sweater</a>,
-                                <a href="shop.html">SweatShirt</a>,
-                                <a href="shop.html">Jacket</a>,
-                                <a href="shop.html">Blazer</a>
+                            @foreach($categories as $category)
+                                <a href="shop.html">{{$category->cate_name}}</a>,
+                            @endforeach
+                            </p>
+                        </div>
+                        <div class="product-footer-meta">
+                            <p><span>Tag:</span>
+                            @foreach($tags as $tag)
+                                <a href="shop.html">{{$tag->tag_name}}</a>,
+                            @endforeach
                             </p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="information-shop">
+                
             </div>
             <div class="row justify-content-center mb--77 mb-md--57">
                 <div class="col-12">
@@ -263,7 +242,7 @@
                                     <ul class="review__list">
                                         <li class="review__item">
                                             <div class="review__container">
-                                                <img src="img/others/comment-1.jpg" alt="Review Avatar" class="review__avatar">
+                                                <img src="/img/others/comment-1.jpg" alt="Review Avatar" class="review__avatar">
                                                 <div class="review__text">
                                                     <div class="d-flex flex-sm-row flex-column justify-content-between">
                                                         <div class="review__meta">
@@ -287,6 +266,7 @@
                                             <div class="col-lg-8">
                                                 <span class="reply-title">Add a review</span>
                                                 <form action="#" class="form pr--30">
+                                                    @csrf
                                                     <div class="form-notes mb--20">
                                                         <p>Your email address will not be published. Required fields are marked <span class="required">*</span></p>
                                                     </div>
@@ -354,7 +334,7 @@
                                 <div class="product-inner">
                                     <div class="product-image">
                                         <figure class="product-image--holder">
-                                            <img src="img/products/prod-04-270x300.jpg" alt="Product">
+                                            <img src="/img/products/prod-04-270x300.jpg" alt="Product">
                                         </figure>
                                         <a href="product-details.html" class="product-overlay"></a>
                                         <div class="product-action">
@@ -392,7 +372,7 @@
                                 <div class="product-inner">
                                     <div class="product-image">
                                         <figure class="product-image--holder">
-                                            <img src="img/products/prod-01-270x300.jpg" alt="Product">
+                                            <img src="/img/products/prod-01-270x300.jpg" alt="Product">
                                         </figure>
                                         <a href="product-details.html" class="product-overlay"></a>
                                         <div class="product-action">
@@ -430,7 +410,7 @@
                                 <div class="product-inner">
                                     <div class="product-image">
                                         <figure class="product-image--holder">
-                                            <img src="img/products/prod-02-270x300.jpg" alt="Product">
+                                            <img src="/img/products/prod-02-270x300.jpg" alt="Product">
                                         </figure>
                                         <a href="product-details.html" class="product-overlay"></a>
                                         <div class="product-action">
@@ -468,7 +448,7 @@
                                 <div class="product-inner">
                                     <div class="product-image">
                                         <figure class="product-image--holder">
-                                            <img src="img/products/prod-03-270x300.jpg" alt="Product">
+                                            <img src="/img/products/prod-03-270x300.jpg" alt="Product">
                                         </figure>
                                         <a href="product-details.html" class="product-overlay"></a>
                                         <div class="product-action">

@@ -12,6 +12,7 @@ use App\Models\ProductOptionColor;
 use App\Models\ProductOptionSize;
 use App\Models\Cates;
 use App\Models\TagPr;
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -31,7 +32,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $allProducts = DB::table('products')->select(DB::raw('*'))->limit(4)->get();
+        return view('home',['products'=>$allProducts]);
     }
     /**
      * Show the form for creating a new resource.
@@ -67,7 +69,47 @@ class HomeController extends Controller
         $product = Product::Find($id);
         if($product)
         {
-            return view('product-details',['product'=>$product]);
+            $user_id = auth()->id();
+            $imgs = DB::table('product_imgs')
+                    ->where('product_imgs.products_id', '=', $id) 
+                    ->select('img_name')
+                    ->get();
+            $size = DB::table('products')
+                    ->where('products.id', '=', $id) 
+                    ->join('product_option_sizes', function ($join){
+                        $join->on('products.id','=','product_option_sizes.products_id');
+                    })
+                    ->join('sizes', 'sizes.id','=','product_option_sizes.sizes_id')
+                    ->select('sizes.id', 'sizes.size_name')
+                    ->get();
+            
+            $color = DB::table('products')
+                    ->where('products.id', '=', $id) 
+                    ->join('product_option_colors', function ($join){
+                        $join->on('products.id','=','product_option_colors.products_id');
+                    })
+                    ->join('colors', 'colors.id','=','product_option_colors.colors_id')
+                    ->select('colors.id', 'colors.color_name')
+                    ->get();
+            
+            $category =  DB::table('products')
+                        ->where('products.id', '=', $id) 
+                        ->join('cates', function ($join){
+                            $join->on('products.id','=','cates.products_id');
+                        })
+                        ->join('categories', 'categories.id','=','cates.categories_id')
+                        ->select('cates.categories_id', 'categories.cate_name')
+                        ->get();
+           
+            $tag = DB::table('products')
+                    ->where('products.id', '=', $id) 
+                    ->join('tag_prs', function ($join){
+                        $join->on('products.id','=','tag_prs.products_id');
+                    })
+                    ->join('tags', 'tags.id','=','tag_prs.tags_id')
+                    ->select('tags.id', 'tags.tag_name')
+                    ->get();
+            return view('product-details',['product'=>$product,'user_id'=>$user_id, 'colors'=>$color, 'sizes'=>$size, 'tags'=>$tag, 'categories'=>$category, 'imgs'=>$imgs]);
         }
         else
         {

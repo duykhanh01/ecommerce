@@ -18,20 +18,18 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/icon.png">
-    <link rel="apple-touch-icon" href="img/icon.png">
-
-    <!-- ************************* CSS Files ************************* -->
-
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="css/vendor.css">
 
     <!-- style css -->
-    <link rel="stylesheet" href="css/main.css">
-    
-    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+
+    <!-- ************************* CSS Files ************************* -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/vendor.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/guess.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -58,7 +56,7 @@
                                         <div class="header__main-left">
                                             <div class="logo">
                                                 <a href="index.html" class="logo--normal">
-                                                    <img src="img/logo/logo.png" alt="Logo">
+                                                    <img src="/img/logo/logo.png" alt="Logo">
                                                 </a>
                                             </div>
                                         </div>
@@ -213,6 +211,7 @@
                                                                             <span class="mm-text">Group Product</span>
                                                                         </a>
                                                                     </li>
+
                                                                 </ul>
                                                             </li>
                                                         </ul>
@@ -334,11 +333,19 @@
                                                             <i class="la la-search"></i>
                                                         </a>
                                                     </div>
-                                                    <div class="header-toolbar__item header-toolbar--minicart-btn">
+                                                    <div class="header-toolbar__item header-toolbar--minicart-btn mr-3">
                                                         <a href="#miniCart" class="header-toolbar__btn toolbar-btn">
                                                             <i class="la la-shopping-cart"></i>
                                                             <span>01</span>
                                                         </a>
+                                                    </div>
+                                                    
+                                                    <div class="dropdown">
+                                                        <img src="/img/avt/avtdefault.png" class="img-fluid rounded-circle" style="width:50px; height:50px" alt="" class="rounded-circle dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item font-user" href="#">Trang cá nhân</a>
+                                                            <a class="dropdown-item font-user" href="{{route('logout')}}">Đăng xuất</a>
+                                                        </div>
                                                     </div>
                                                     <div class="header-toolbar__item d-block d-lg-none">
                                                         <a href="#offcanvasMenu" class="header-toolbar__btn toolbar-btn menu-btn">
@@ -374,7 +381,7 @@
                                 <div class="footer-widget">
                                     <div class="textwidget">
                                         <figure class="footer-logo mb--30">
-                                            <img src="img/logo/logo.png" alt="Logo">
+                                            <img src="/img/logo/logo.png" alt="Logo">
                                         </figure>
                                         <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms. </p>
                                     </div>
@@ -678,7 +685,7 @@
                                         <i class="la la-remove"></i>
                                     </a>
                                     <div class="mini-cart__product-image">
-                                        <img src="img/products/prod-01-100x100.jpg" alt="products">
+                                        <img src="/img/products/prod-01-100x100.jpg" alt="products">
                                     </div>
                                     <div class="mini-cart__product-content">
                                         <a class="mini-cart__product-title" href="product-details.html">Golden Easy Spot Chair.</a>
@@ -690,7 +697,7 @@
                                         <i class="la la-remove"></i>
                                     </a>
                                     <div class="mini-cart__product-image">
-                                        <img src="img/products/prod-02-100x100.jpg" alt="products">
+                                        <img src="/img/products/prod-02-100x100.jpg" alt="products">
                                     </div>
                                     <div class="mini-cart__product-content">
                                         <a class="mini-cart__product-title" href="product-details.html">Golden Easy Spot Chair.</a>
@@ -702,7 +709,7 @@
                                         <i class="la la-remove"></i>
                                     </a>
                                     <div class="mini-cart__product-image">
-                                        <img src="img/products/prod-03-100x100.jpg" alt="products">
+                                        <img src="/img/products/prod-03-100x100.jpg" alt="products">
                                     </div>
                                     <div class="mini-cart__product-content">
                                         <a class="mini-cart__product-title" href="product-details.html">Golden Easy Spot Chair.</a>
@@ -737,10 +744,14 @@
             </div>
         </div>
     </div>
-    <script src="js/vendor.js"></script>
+    <script src="/js/vendor.js"></script>
 
     <!-- Main JS -->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/custom_home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

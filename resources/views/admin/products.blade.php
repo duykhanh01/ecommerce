@@ -886,7 +886,7 @@
                 </div>
                 <div class="modal__body">
                     <div class="modal__container">
-                        <form enctype="multipart/form-data" id="form-add-product" action="{{route('addProduct')}}" method="POST" >
+                        <form id="form-add-product" action="{{route('addProduct')}}" method="POST"  enctype="multipart/form-data">
                         @csrf    
                         <div class="row row--md">
                                 <div class="col-12 form-group form-group--lg">

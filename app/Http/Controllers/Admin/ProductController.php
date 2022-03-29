@@ -13,6 +13,7 @@ use App\Models\ProductOptionColor;
 use App\Models\ProductOptionSize;
 use App\Models\Cates;
 use App\Models\TagPr;
+use App\Models\ProductImg;
 
 
 class ProductController extends Controller
@@ -51,8 +52,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        
+       // dd($request);
         //return $request->pr_name;
+        
         $userId = auth()->id();
         $pr_name = $request->pr_name;
         $pr_description = $request->pr_desc;
@@ -72,6 +74,22 @@ class ProductController extends Controller
         $product->pr_discount = $pr_discount;
         $product->save();
         $pr_id = $product->id;
+        $files = [];
+        if($request->hasfile('file_upload'))
+         {
+            foreach($request->file('file_upload') as $file)
+            {
+                $name = time().rand(1,100).'.'.$file->extension();
+              //  return $name;
+                $file->move(public_path('files'), $name);  
+                $files[] = $name;  
+                $img = new ProductImg();
+                $img->products_id = $pr_id;
+                $img->colors_id = 1;
+                $img->img_name = $name;
+                $img->save();
+            }
+         }
         foreach($pr_colors as $cl)
         {
             $pr_color = new ProductOptionColor;

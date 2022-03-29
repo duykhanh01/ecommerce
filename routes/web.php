@@ -57,3 +57,9 @@ Route::prefix('home')->group(function () {
     Route::get('/product-detail/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('product-detail');
 
 });
+Route::prefix('cart')->group(function () {
+    Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('cart'); 
+    Route::post('/addToCart',[App\Http\Controllers\CartController::class, 'store'])->name('addToCart');  
+
+});
+Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logut');     
